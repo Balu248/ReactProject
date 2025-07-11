@@ -29,7 +29,7 @@ const Viewbooks = () => {
                                         <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
                                             <div class="card h-100">
                                                 <img src={value.poster} class="card-img-top"
-                                                    alt="Atomic Habits"></img>
+                                                    alt="" height={400} width={100}></img>
                                                 <div class="card-body">
                                                     <h5 class="card-title">{value.bookname}</h5>
                                                     <p class="card-text flex-grow-1">{value.Description}</p>
