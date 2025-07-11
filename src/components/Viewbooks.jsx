@@ -1,141 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 const Viewbooks = () => {
+    const [bookname, xbookname] = useState(
+        [
+            { "bookname": "To Kill a Mockingbird", "Description": "A novel about racial injustice and childhood innocence in the Deep South.", "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBFbqVtvcdIMuLBpDGJaZ9ms8d0d78ne7rVw&s" },
+            { "bookname": "1984", "Description": "A dystopian novel set in a totalitarian regime that watches everyone.", "poster": "https://m.media-amazon.com/images/I/71kxa1-0mfL._AC_UF1000,1000_QL80_.jpg" },
+            { "bookname": "The Great Gatsby", "Description": "A critique of the American Dream set in the Roaring Twenties.", "poster": "https://m.media-amazon.com/images/I/81af+MCATTL._AC_UF1000,1000_QL80_.jpg" },
+            { "bookname": "The Alchemist", "Description": "A philosophical tale about finding one's destiny.", "poster": "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg" },
+            { "bookname": "Harry Potter and the Sorcerer's Stone", "Description": "The first book in the magical journey of a young wizard.", "poster": "https://m.media-amazon.com/images/I/81iqZ2HHD-L._AC_UF1000,1000_QL80_.jpg" },
+            { "bookname": "The Hobbit", "Description": "A fantasy adventure about Bilbo Baggins and a quest to reclaim treasure.", "poster": "https://m.media-amazon.com/images/I/91b0C2YNSrL._AC_UF1000,1000_QL80_.jpg" },
+            { "bookname": "Pride and Prejudice", "Description": "A classic romance exploring manners and marriage in 19th-century England.", "poster": "https://m.media-amazon.com/images/I/712P0p5cXIL._UF1000,1000_QL80_.jpg" },
+            { "bookname": "The Catcher in the Rye", "Description": "A rebellious teen's perspective on the adult world.", "poster": "https://m.media-amazon.com/images/I/91fQEUwFMyL._UF1000,1000_QL80_.jpg" },
+            { "bookname": "Sapiens", "Description": "A brief history of humankind exploring evolution and culture.", "poster": "https://m.media-amazon.com/images/I/713jIoMO3UL._AC_UF1000,1000_QL80_.jpg" },
+            { "bookname": "The Book Thief", "Description": "A story of a girl in Nazi Germany who finds solace in books.", "poster": "https://m.media-amazon.com/images/I/91ndEtx1uWL._UF1000,1000_QL80_.jpg"}
+        ]
+    )
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className="container">
                 <div className="row">
                     <div className="col col-12 c0l-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <div className="row g-3">
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" class="card-img-top"
-                                        alt="Atomic Habits"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Atomic Habits</h5>
-                                            <p class="card-text flex-grow-1">A guide to building good habits and breaking bad ones.
-                                                Price: ₹499</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
+                            {bookname.map(
+                                (value, index) => {
+                                    return (
+                                        <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
+                                            <div class="card h-100">
+                                                <img src={value.poster} class="card-img-top"
+                                                    alt="Atomic Habits"></img>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{value.bookname}</h5>
+                                                    <p class="card-text flex-grow-1">{value.Description}</p>
+                                                    <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                </div>
-                            </div>
+                                    )
+                                }
+                            )}
 
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" class="card-img-top"
-                                        alt="The Alchemist"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">The Alchemist</h5>
-                                            <p class="card-text flex-grow-1">A mystical story about following your dreams. Price:
-                                                ₹350</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
 
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/81YOuOGFCJL.jpg" class="card-img-top"
-                                        alt="Harry Potter"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Harry Potter</h5>
-                                            <p class="card-text flex-grow-1">Fantasy tale of a young wizard at Hogwarts. Price: ₹799
-                                            </p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
 
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg" class="card-img-top"
-                                        alt="Ikigai"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ikigai</h5>
-                                            <p class="card-text flex-grow-1">The Japanese secret to a long and happy life. Price:
-                                                ₹399</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg" class="card-img-top"
-                                        alt="The Subtle Art of Not Giving a F*ck"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">The Subtle Art...</h5>
-                                            <p class="card-text flex-grow-1">A no-nonsense approach to living a better life. Price:
-                                                ₹499</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/61IxJuRI39L.jpg" class="card-img-top"
-                                        alt="Think and Grow Rich"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Think and Grow Rich</h5>
-                                            <p class="card-text flex-grow-1">Classic book on success and mindset. Price: ₹299</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg" alt="1984"
-                                        class="card-img-top"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">1984 by George Orwell</h5>
-                                            <p class="card-text flex-grow-1">Dystopian novel exploring surveillance and control.
-                                                Price: ₹349</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" class="card-img-top"
-                                        alt="Rich Dad Poor Dad"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Rich Dad Poor Dad</h5>
-                                            <p class="card-text flex-grow-1">Learn financial freedom and investing basics. Price:
-                                                ₹399</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/914cHl9v7oL._UF1000,1000_QL80_.jpg"
-                                        class="card-img-top" alt="The Book Thief"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">The Book Thief</h5>
-                                            <p class="card-text flex-grow-1">A powerful story set in Nazi Germany. Price: ₹449</p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 d-flex">
-                                <div class="card h-100">
-                                    <img src="https://m.media-amazon.com/images/I/71gfBC95RIL._UF1000,1000_QL80_.jpg"
-                                        class="card-img-top" alt="Do It Today"></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Do It Today</h5>
-                                            <p class="card-text flex-grow-1">Beat procrastination and get things done. Price: ₹249
-                                            </p>
-                                            <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
-                                        </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
